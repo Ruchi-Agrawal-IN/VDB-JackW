@@ -18,32 +18,32 @@ class ViewModel {
             return
         }
         let url = URL(string: String(format: UrlString, (myModel.count/15)+1))
-         guard let requestUrl = url else {
-             fatalError()
-         }
-         //Create URL Request
-         var request = URLRequest(url: requestUrl)
-         //specify HTTP Method to use
-         request.httpMethod = "GET"
-         //Send HTTP Request
+        guard let requestUrl = url else {
+            fatalError()
+        }
+        //Create URL Request
+        var request = URLRequest(url: requestUrl)
+        //specify HTTP Method to use
+        request.httpMethod = "GET"
+        //Send HTTP Request
         let task  = URLSession.shared.dataTask(with: request) {(data, response, error) in
-                        
-             // Check for Error
-             if let error = error{
-                 print("Error took place:\(error)")
-                 return
-             }
-             //Read HTTP Response status code
-             if let response = response as? HTTPURLResponse{
-                 print("Response HTTP Status code : \(response.statusCode)")
-               
-             }
-             //Convert HTTP Response Data to a simple string
+            
+            // Check for Error
+            if let error = error{
+                print("Error took place:\(error)")
+                return
+            }
+            //Read HTTP Response status code
+            if let response = response as? HTTPURLResponse{
+                print("Response HTTP Status code : \(response.statusCode)")
+                
+            }
+            //Convert HTTP Response Data to a simple string
             if let responseData = data,
-                let dataString = String(data: responseData,encoding: .utf8){
-                 print("Response data string : \n \(dataString)")
+               let dataString = String(data: responseData,encoding: .utf8){
+                print("Response data string : \n \(dataString)")
                 self.decodeJsonData(data: responseData)
-             }
+            }
         }
         task.resume()
         
@@ -58,24 +58,13 @@ class ViewModel {
             for jackProject in output{
                 let jackProjectObservable = Observable(JackProject(id: jackProject.id, name: jackProject.name, description: jackProject.description, language: jackProject.language, open_issues: jackProject.open_issues, watchers: jackProject.watchers))
                 self.myModel.insert(jackProjectObservable)
-//                        jackProjectObservable.bind = { _ in
-//                            NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "updateUI")))
-//                        }
+
             }
             NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "updateUI")))
         }catch let error as NSError{
             print("JSON Parsing Error is :\(error)")
         }
     }
-    
-//    func addEntry() {
-////        let jackProjectObservable = Observable(JackProject(projectName: "test", description: "description dummy", language: "Java", bugCount: 1, watchCount: 2))
-////        myModel.insert(jackProjectObservable)
-//
-//        jackProjectObservable.bind = { _ in
-//            NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "updateUI")))
-//        }
-//    }
     
     var count: Int {
         return myModel.count

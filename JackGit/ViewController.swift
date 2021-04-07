@@ -12,14 +12,14 @@ class ViewController: UITableViewController {
     var activityIndicator: LoadMoreActivityIndicator!
     override func viewDidLoad() {
         super.viewDidLoad()
-       // viewModel.addEntry()
+        // viewModel.addEntry()
         viewModel.downloadData()
         //tableView.delegate = self
-
+        
         tableView.dataSource = self
         tableView.delegate=self
         tableView.tableFooterView = UIView()
-
+        
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "updateUI"), object: nil, queue: OperationQueue.main) { (notification) in
             self.tableView.reloadData()
         }
