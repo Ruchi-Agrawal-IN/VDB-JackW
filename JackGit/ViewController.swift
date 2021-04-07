@@ -7,13 +7,23 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UITableViewController {
+    let viewModel = ViewModel();
+    var activityIndicator: LoadMoreActivityIndicator!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+       // viewModel.addEntry()
+        viewModel.downloadData()
+        //tableView.delegate = self
+
+        tableView.dataSource = self
+        tableView.delegate=self
+        tableView.tableFooterView = UIView()
+
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "updateUI"), object: nil, queue: OperationQueue.main) { (notification) in
+            self.tableView.reloadData()
+        }
+        activityIndicator = LoadMoreActivityIndicator(scrollView: tableView, spacingFromLastCell: 10, spacingFromLastCellWhenLoadMoreActionStart: 360)
     }
-
-
 }
 

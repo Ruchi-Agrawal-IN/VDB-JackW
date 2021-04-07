@@ -15,6 +15,13 @@
 		980CE04A261C9DEE007B8C99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 980CE048261C9DEE007B8C99 /* LaunchScreen.storyboard */; };
 		980CE055261C9DEF007B8C99 /* JackGitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980CE054261C9DEF007B8C99 /* JackGitTests.swift */; };
 		980CE060261C9DEF007B8C99 /* JackGitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980CE05F261C9DEF007B8C99 /* JackGitUITests.swift */; };
+		980CE073261C9E5C007B8C99 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980CE072261C9E5C007B8C99 /* ViewModel.swift */; };
+		980CE078261C9E7C007B8C99 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980CE077261C9E7C007B8C99 /* Model.swift */; };
+		980CE07D261CA45A007B8C99 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980CE07C261CA45A007B8C99 /* Binding.swift */; };
+		980CE082261CA5C3007B8C99 /* ViewController-UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980CE081261CA5C3007B8C99 /* ViewController-UITableViewDataSource.swift */; };
+		980CE08A261CA7B9007B8C99 /* JackProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980CE089261CA7B9007B8C99 /* JackProject.swift */; };
+		9843909C261DB04300B68F48 /* tableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9843909B261DB04300B68F48 /* tableViewCell.swift */; };
+		984390CD261DD78F00B68F48 /* LoadMoreActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984390CC261DD78F00B68F48 /* LoadMoreActivityIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +56,13 @@
 		980CE05B261C9DEF007B8C99 /* JackGitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JackGitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		980CE05F261C9DEF007B8C99 /* JackGitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackGitUITests.swift; sourceTree = "<group>"; };
 		980CE061261C9DEF007B8C99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		980CE072261C9E5C007B8C99 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		980CE077261C9E7C007B8C99 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		980CE07C261CA45A007B8C99 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
+		980CE081261CA5C3007B8C99 /* ViewController-UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController-UITableViewDataSource.swift"; sourceTree = "<group>"; };
+		980CE089261CA7B9007B8C99 /* JackProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackProject.swift; sourceTree = "<group>"; };
+		9843909B261DB04300B68F48 /* tableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableViewCell.swift; sourceTree = "<group>"; };
+		984390CC261DD78F00B68F48 /* LoadMoreActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMoreActivityIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +113,19 @@
 		980CE03C261C9DE9007B8C99 /* JackGit */ = {
 			isa = PBXGroup;
 			children = (
+				980CE071261C9E25007B8C99 /* Model */,
+				980CE070261C9E1A007B8C99 /* ViewModel */,
 				980CE03D261C9DE9007B8C99 /* AppDelegate.swift */,
 				980CE03F261C9DE9007B8C99 /* SceneDelegate.swift */,
 				980CE041261C9DE9007B8C99 /* ViewController.swift */,
-				980CE043261C9DE9007B8C99 /* Main.storyboard */,
+				980CE081261CA5C3007B8C99 /* ViewController-UITableViewDataSource.swift */,
+				9843909B261DB04300B68F48 /* tableViewCell.swift */,
 				980CE046261C9DEE007B8C99 /* Assets.xcassets */,
+				980CE043261C9DE9007B8C99 /* Main.storyboard */,
 				980CE048261C9DEE007B8C99 /* LaunchScreen.storyboard */,
 				980CE04B261C9DEE007B8C99 /* Info.plist */,
+				980CE07C261CA45A007B8C99 /* Binding.swift */,
+				984390CC261DD78F00B68F48 /* LoadMoreActivityIndicator.swift */,
 			);
 			path = JackGit;
 			sourceTree = "<group>";
@@ -126,6 +146,24 @@
 				980CE061261C9DEF007B8C99 /* Info.plist */,
 			);
 			path = JackGitUITests;
+			sourceTree = "<group>";
+		};
+		980CE070261C9E1A007B8C99 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				980CE072261C9E5C007B8C99 /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		980CE071261C9E25007B8C99 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				980CE077261C9E7C007B8C99 /* Model.swift */,
+				980CE089261CA7B9007B8C99 /* JackProject.swift */,
+			);
+			name = Model;
+			path = "New Group1";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +296,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				980CE078261C9E7C007B8C99 /* Model.swift in Sources */,
+				980CE07D261CA45A007B8C99 /* Binding.swift in Sources */,
 				980CE042261C9DE9007B8C99 /* ViewController.swift in Sources */,
+				984390CD261DD78F00B68F48 /* LoadMoreActivityIndicator.swift in Sources */,
 				980CE03E261C9DE9007B8C99 /* AppDelegate.swift in Sources */,
+				980CE08A261CA7B9007B8C99 /* JackProject.swift in Sources */,
+				980CE073261C9E5C007B8C99 /* ViewModel.swift in Sources */,
 				980CE040261C9DE9007B8C99 /* SceneDelegate.swift in Sources */,
+				980CE082261CA5C3007B8C99 /* ViewController-UITableViewDataSource.swift in Sources */,
+				9843909C261DB04300B68F48 /* tableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
